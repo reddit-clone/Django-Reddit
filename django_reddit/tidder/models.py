@@ -45,9 +45,15 @@ class Save (models.Model):
         return self.save 
 
 class Post_Votes(models.Model):
+    upOne = '+1'
+    downOne = '-1'
+    vote_choices = (
+    (upOne = '+1'),
+    (downOne = '-1')   
+    )
     user = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='users')
     post = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='post')
-    value = models.CharField(choices = )
+    value = models.CharField(choices = vote_choices)
 
     def __str__ (self):
         return self.post_votes 
