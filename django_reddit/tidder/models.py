@@ -12,7 +12,14 @@ class Post (models.Model):
     def __str__ (self):
         return self.title
 
-        
+ class Comment(models.Model):
+     created_at = models.DateTimeField(default=datetime.now, blank=True)
+     content = models.TextField()  
+     vote_total = models.CharField(max_lenth=255)  
+     post = models.ForeignKey(Post, on_delete= models.CASCADE, blank=True, related_name='posts')
+
+     def __str__ (self):
+         return self.content 
 
 
 
