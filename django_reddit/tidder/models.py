@@ -7,7 +7,7 @@ class Post (models.Model):
     picture = models.CharField(max_length=400, blank = True)
     content = models.TextField()
     site_url = models.CharField(max_length=400)
-    vote_total = models.CharField(max_length=255)
+    vote_total = models.IntegerField(max_length=255)
 
     def __str__ (self):
         return self.title
@@ -15,7 +15,7 @@ class Post (models.Model):
 class Comment(models.Model):
      created_at = models.DateTimeField(default=datetime.now, blank=True)
      content = models.TextField()  
-     vote_total = models.CharField(max_length=255)  
+     vote_total = models.IntegerField(max_length=255)  
      post = models.ForeignKey(Post, on_delete= models.CASCADE, blank=True, related_name='posts')
 
      def __str__ (self):

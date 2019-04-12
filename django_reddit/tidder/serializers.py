@@ -23,3 +23,4 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ('profile_pic', 'user')
+
