@@ -24,3 +24,23 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ('profile_pic', 'user')
 
+ class Post_VoteSerializer(serializer.ModelSerializer):
+     post = PostSerializer(many=True, read_only=True)
+     class Meta:
+         model = Post_Vote
+         fields = ('user, post, value')
+
+class SaveSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=True, read_only=True)
+    post = PostSerializer(many= True, read_only=True)
+    class Meta:
+        model = Save
+        fields = ('user', 'post', 'created_at')
+
+class Comment_VoteSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=True, read_only=True)
+    comment = CommentSerializer(many=True, read_only=True )
+    class Meta:
+        model = Comment_Vote
+        fields = ('user', 'comment', 'value')
+

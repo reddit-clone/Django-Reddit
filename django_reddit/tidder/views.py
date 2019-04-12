@@ -19,3 +19,15 @@ class User(viewsets.ModelViewSet):
 class Profile(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+class Comment_Vote(viewsets.ModelViewSet):
+    queryset = Comment_Vote.objects.all()
+    serializer_class = Comment_VoteSerializer
+
+class Save(viewsets.ModelViewSet):
+    queryset = Save.objects.all()
+    serializer_class = SaveSerializer
+
+class Post_Vote(viewsets.ModelViewSet):
+    queryset = Post_Vote.objects.all()
+    serializer_class = Post_Vote
