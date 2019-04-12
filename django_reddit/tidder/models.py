@@ -36,6 +36,21 @@ class Profile(models.Model):
     def __str__ (self):
         return self.user
 
+class Save (models.Model):
+    user = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='users')
+    post = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='post')
+    created_at = models.CharField(max_length=255)
+
+    def __str__ (self):
+        return self.save 
+
+class Post_Votes(models.Model):
+    user = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='users')
+    post = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='post')
+    value = models.CharField(choices = )
+
+    def __str__ (self):
+        return self.post_votes 
 
 
 
