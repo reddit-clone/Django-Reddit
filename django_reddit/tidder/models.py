@@ -48,8 +48,8 @@ class Post_Votes(models.Model):
     upOne = '+1'
     downOne = '-1'
     vote_choices = (
-    (upOne = '+1'),
-    (downOne = '-1')   
+    (upOne, '+1'),
+    (downOne, '-1')   
     )
     user = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='users')
     post = models.ForeignKey(Post, on_delete = models.CASCADE, blank=True, related_name='post')
