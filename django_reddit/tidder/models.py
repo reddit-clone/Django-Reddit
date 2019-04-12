@@ -19,7 +19,9 @@ class Post (models.Model):
      post = models.ForeignKey(Post, on_delete= models.CASCADE, blank=True, related_name='posts')
 
      def __str__ (self):
-         return self.content 
+         return self.content
+ 
+        
 
 
 
