@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'django_reddit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'reddit_django,
+        'NAME': 'reddit_django',
         'USER': 'reddit',
         'PASSWORD': 'django',
         'HOST': 'localhost'
